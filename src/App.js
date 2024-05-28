@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch, Link as RouterLink, BrowserRouter, Routes } from 'react-router-dom';
+import React, {Suspense} from 'react';
+import { FullPageFallbackProgress } from "./Components/UI/preloaders/FullPageFallbackProgress"
+import "../src/common/assets/styles/App.css";
+import { observer } from "mobx-react-lite"
+import { provider, useInstance } from "react-ioc"
+import { AuthLayout } from "./Layouts/AuthLayout"
+import CounterPage from "./pages/counter/counter.page"
+import { HOME_ROUTE, publicRoutes } from "./common/router/routes"
 
-function App() {
+const App  = provider(
+
+)(observer(() => {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.+++++++
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Suspense fallback={<FullPageFallbackProgress/>}>
+        <Routes>
+          <Route path={HOME_ROUTE} element={<AuthLayout />}>
+            <Route index element={<CounterPage/>} />
+
+            {publicRoutes.map(({path, Component}) =>
+              <Route key={path} path={path} element={Component}/>
+            )}
+          </Route>
+          {/*{publicRoutes.map(({path, Component}) =>*/}
+          {/*  <Route key={path} path={path} element={Component}/>*/}
+          {/*)}*/}
+        </Routes>
+      </Suspense>
+    </Router>
   );
-}
+}));
 
 export default App;
