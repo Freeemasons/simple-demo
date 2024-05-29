@@ -65,11 +65,18 @@ const WeatherPage = (observer(() => {
   // }, [])
 
 
-  const calendarTime = moment(new Date()).format('dddd, D MMMM')
 
+  const calendarTime = moment(new Date()).format('dddd, D MMMM')
 
   const changeHandler = event => {
     weatherStore.setCurrentCity(event.target.value)
+  }
+
+  function timeFormat(timeZone){
+
+    const now = moment.utc();
+    const formattedTime = now.add(timeZone, 'seconds').format('HH:mm');
+    return formattedTime
   }
 
 
@@ -92,6 +99,7 @@ const WeatherPage = (observer(() => {
             fetchWeather={fetchWeather}
             data={data}
             calendarTime={calendarTime}
+            timeFormat={timeFormat}
           />
           <DescriptionText />
         </Grid>

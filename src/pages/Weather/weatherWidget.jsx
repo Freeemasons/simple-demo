@@ -5,7 +5,7 @@ import AdditionalInfo from "./additionalInfo"
 
 const WeatherWidget = (props) => {
 
-  const {changeHandler, fetchWeather, data, timeStampCount, calendarTime} = props
+  const {changeHandler, fetchWeather, data, timeStampCount, calendarTime, timeFormat} = props
 
 
   return (
@@ -61,7 +61,7 @@ const WeatherWidget = (props) => {
         <Typography variant={"subtitle1"} sx={{
           p: "0px 10px 10px 20px"
         }}>
-          {calendarTime}
+          {calendarTime} | {timeFormat(data.timezone)}
         </Typography>
 
         <Typography
