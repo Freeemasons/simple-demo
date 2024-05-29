@@ -7,6 +7,8 @@ import authStore from "../../stores/auth.store"
 const RequireAuth = observer(({children}) => {
   const location = useLocation();
 
+  console.log("authStore.isAuth")
+
   if (!authStore.isAuth) {
     return <Navigate to={AUTH_ROUTE} state={{from: location}}/>
   }

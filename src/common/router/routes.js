@@ -29,17 +29,19 @@ const lazyRetry = (componentImport) =>
 
 
 const CounterPage = lazy(() => lazyRetry( () => import("../../pages/counter/counter.page.jsx")))
-const TodosPage = lazy(() => lazyRetry( () => import("../../pages/Todos/Todos.page.jsx")))
+const TodosPage = lazy(() => lazyRetry( () => import("../../pages/Weather/weather.page.jsx")))
 
 export const HOME_ROUTE = '/'
 export const AUTH_ROUTE = '/auth'
-export const TODOS_ROUTE = '/todos'
+export const WEATHER_ROUTE = '/weather'
+// export const USER_PROFILE = '/user-profile'
+// export const EDIT_USER_PROFILE = '/edit-user-profile'
 
 
 export const indexElement = <CounterPage />
 
 export const privateRoutes = [
-  { path: TODOS_ROUTE, Component: <TodosPage /> },
+  { path: WEATHER_ROUTE, Component: <RequireAuth><TodosPage /></RequireAuth> },
 ]
 
 export const publicRoutes = [

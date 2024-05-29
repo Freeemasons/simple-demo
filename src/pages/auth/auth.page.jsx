@@ -8,6 +8,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import authStore from "../../stores/auth.store"
+import logo from "../../logo.svg"
 
 const AuthPage = observer(() => {
 
@@ -17,7 +18,7 @@ const AuthPage = observer(() => {
   const fromPage = authStore.isNavigateHome ? '/' : pathname;
 
   useEffect(() => {
-    document.title = 'Yutok - войти на сайт'
+    document.title = 'Enter'
 
     if (authStore.isAuth) {
       navigate(fromPage, {replace: true})
@@ -79,11 +80,12 @@ const AuthPage = observer(() => {
       <Container maxWidth="xs">
         <Box sx={{my: 8, backgroundColor: 'white', p: 5, boxShadow: 2, borderRadius: 1}}>
           {/*<Typography variant="h3" sx={{textAlign: 'center'}}>Вход на сайт</Typography>*/}
-          <Box sx={{pb: 1, pt: 2, textAlign: 'center'}}><img className="auth-logo" src={""} alt="logo" /></Box>
+
+          <Box sx={{pb: 1, pt: 2, textAlign: 'center'}}><img className="auth-logo" src={logo} alt="logo" /></Box>
           <TextField
             fullWidth
             id="username"
-            label="Введите email"
+            label="username"
             margin="normal"
             name="username"
             type="email"
@@ -96,7 +98,7 @@ const AuthPage = observer(() => {
           <TextField
             fullWidth
             id="password"
-            label="Введите пароль"
+            label="password"
             margin="normal"
             name="password"
             // type="password"
@@ -130,14 +132,14 @@ const AuthPage = observer(() => {
               // disabled={loading}
               onClick={login}
             >
-              Войти
+              Log in
             </Button>
           </Box>
           <Typography
             color="textSecondary"
             variant="body2"
           >
-            Забыли пароль?
+            Forgot password?
           </Typography>
         </Box>
       </Container>

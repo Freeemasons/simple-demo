@@ -75,101 +75,14 @@ export const SideBar = observer((props) => {
                   // onClick={handleScheduleClick}
                   selected={nav.selectedIndex === 0} component={RouterLink} to="/">
           <ListItemIcon><EventIcon /></ListItemIcon>
-          <ListItemText primary='Счетчик' />
+          <ListItemText primary='Counter' />
         </ListItem>
         <ListItem button onClick={handleListItemClick}
-                  selected={nav.selectedIndex === 1} component={RouterLink} to="/todos">
+                  selected={nav.selectedIndex === 1} component={RouterLink} to="/weather">
           <ListItemIcon><GroupIcon /></ListItemIcon>
-          <ListItemText primary='Дела' />
+          <ListItemText primary='Weather' />
         </ListItem>
-        <ListItem button onClick={handleListItemClick}
-                  selected={nav.selectedIndex === 2} component={RouterLink} to="/table">
-          <ListItemIcon><EventNoteIcon /></ListItemIcon>
-          <ListItemText primary='Погода (в разработке)' />
-        </ListItem>
-        {/*<ListItem button onClick={handleListItemClick}*/}
-        {/*          selected={nav.selectedIndex === 2} component={RouterLink} to="/table">*/}
-        {/*  <ListItemIcon><EventNoteIcon /></ListItemIcon>*/}
-        {/*  <ListItemText primary='Форма' />*/}
-        {/*</ListItem>*/}
-        {/*<ListItem button onClick={handleListItemClick}*/}
-        {/*          selected={nav.selectedIndex === 3} component={RouterLink} to="/calls">*/}
-        {/*  <ListItemIcon><PermPhoneMsgIcon /></ListItemIcon>*/}
-        {/*  <ListItemText primary='Магазин' />*/}
-        {/*</ListItem>*/}
-        {/*<ListItem button onClick={handleListItemClick}*/}
-        {/*          selected={nav.selectedIndex === 3} component={RouterLink} to="/calls">*/}
-        {/*  <ListItemIcon><PermPhoneMsgIcon /></ListItemIcon>*/}
-        {/*  <ListItemText primary='Прайс' />*/}
-        {/*</ListItem>*/}
-        {/*<ListItem button onClick={handleListItemClick}*/}
-        {/*          selected={nav.selectedIndex === 3} component={RouterLink} to="/calls">*/}
-        {/*  <ListItemIcon><PermPhoneMsgIcon /></ListItemIcon>*/}
-        {/*  <ListItemText primary='Табличка с фильтрами' />*/}
-        {/*</ListItem>*/}
       </List>
-      <Divider />
-
-      {/*<List>*/}
-      {/*  <ListItem button onClick={handleListItemClick}*/}
-      {/*            selected={nav.selectedIndex === 4} component={RouterLink} to="/dept">*/}
-      {/*    <ListItemIcon><PriceCheckIcon /></ListItemIcon>*/}
-      {/*    <ListItemText primary='Баланс' />*/}
-      {/*  </ListItem>*/}
-      {/*  <ListItem button onClick={handleListItemClick}*/}
-      {/*            selected={nav.selectedIndex === 5} component={RouterLink} to="/debt_prepaid">*/}
-      {/*    <ListItemIcon><PercentIcon /></ListItemIcon>*/}
-      {/*    <ListItemText primary='Долг Аванс' />*/}
-      {/*  </ListItem>*/}
-      {/*  <ListItem button onClick={handleListItemClick}*/}
-      {/*            selected={nav.selectedIndex === 6} component={RouterLink} to="/price">*/}
-      {/*    <ListItemIcon><CurrencyRubleIcon /></ListItemIcon>*/}
-      {/*    <ListItemText primary='Прайс' />*/}
-      {/*  </ListItem>*/}
-      {/*</List>*/}
-
-      <Divider />
-
-      {/*<List>*/}
-      {/*  <ListItem*/}
-      {/*  >*/}
-      {/*    <ListItemIcon>*/}
-      {/*      <QueryStatsIcon />*/}
-      {/*    </ListItemIcon>*/}
-      {/*    <ListItemText primary='Статистика' />*/}
-
-      {/*    {*/}
-      {/*      open ? <IconButton onClick={handleClick}>*/}
-      {/*          <ExpandLess />*/}
-      {/*        </IconButton>*/}
-      {/*        : <IconButton onClick={handleClick}>*/}
-      {/*          <ExpandMore />*/}
-      {/*        </IconButton>*/}
-      {/*   }*/}
-
-
-      {/*  </ListItem>*/}
-      {/*</List>*/}
-
-      {/*<Collapse in={open} timeout="auto" unmountOnExit>*/}
-      {/*  <List*/}
-      {/*    sx={{*/}
-      {/*      p: 0*/}
-      {/*    }}*/}
-      {/*  >*/}
-      {/*    <ListItem button*/}
-      {/*              sx={{pl: 4, pt: 0, pb: 0, pr: 0}}*/}
-      {/*              selected={nav.selectedIndex === 3}*/}
-      {/*              component={RouterLink} to="/statistics/patients-statistics"*/}
-      {/*    >*/}
-      {/*      <ListItemIcon>*/}
-      {/*        <PersonIcon />*/}
-      {/*      </ListItemIcon>*/}
-      {/*      <ListItemText primary="Статистика пациентов" />*/}
-      {/*    </ListItem>*/}
-      {/*  </List>*/}
-      {/*</Collapse>*/}
-
 
     </div>
   );

@@ -5,7 +5,7 @@ export default class NavStore {
   mobileMenuId = 'primary-search-account-mobile-menu'
   menuAnchorEl = null
   mobileMenuAnchorEl = null
-  headerTitle = 'Расписание'
+  headerTitle = 'Counter'
   drawerWidth = 240
   isMobileOpen = false
   isMenuOpen = false

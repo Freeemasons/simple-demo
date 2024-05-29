@@ -45,13 +45,13 @@ export const HeaderMenu = observer(() => {
       onClose={handleMenuClose}
     >
       <MenuItem key={1} onClick={handleMenuClose}
-                component={RouterLink} to="/profile"><IconButton><AccountCircle /></IconButton>Мой профиль</MenuItem>
+                component={RouterLink} to="/profile"><IconButton><AccountCircle /></IconButton>My profile</MenuItem>
       <Divider />
 
       <MenuItem key={3} onClick={logoutHandler}>
         <IconButton><LogoutIcon />
         </IconButton>
-        Выйти
+        Log out
       </MenuItem>
 
     </Menu>

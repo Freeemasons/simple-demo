@@ -27,15 +27,6 @@ export const HeaderMobileMenu = observer(() => {
     authStore.logout()
   }
 
-  // const handleChatOpen = () => {
-  //   storeChat.setOpenChatModal(true)
-  // };
-  //
-  // const handleSmsClick = () => {
-  //   smsTimerSendStore.setOpenModal(true)
-  //   handleMenuClose()
-  // }
-
   return (
     <Menu
       anchorEl={nav.mobileMenuAnchorEl}
@@ -64,7 +55,7 @@ export const HeaderMobileMenu = observer(() => {
         >
           <AccountCircle/>
         </IconButton>
-        <Typography>Мой профиль</Typography>
+        <Typography>My profile</Typography>
       </MenuItem>
       <Divider/>
       <MenuItem key={5} onClick={logoutHandler}>
@@ -77,7 +68,7 @@ export const HeaderMobileMenu = observer(() => {
         >
           <LogoutIcon/>
         </IconButton>
-        <Typography>Выйти</Typography>
+        <Typography>Log out</Typography>
       </MenuItem>
     </Menu>
   );
