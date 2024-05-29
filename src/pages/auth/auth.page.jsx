@@ -20,7 +20,7 @@ const AuthPage = observer(() => {
     document.title = 'Yutok - войти на сайт'
 
     if (authStore.isAuth) {
-      navigate(fromPage, { replace: true })
+      navigate(fromPage, {replace: true})
     }
 
   }, [fromPage])
@@ -29,13 +29,14 @@ const AuthPage = observer(() => {
   const [form, setForm] = useState({
     username: '', password: ''
   })
+
   const [showPassword, setShowPassword] = useState(false)
 
   const [errorForm, setErrorForm] = useState('')
 
 
   const changeHandler = event => {
-    setForm({ ...form, [event.target.name]: event.target.value })
+    setForm({...form, [event.target.name]: event.target.value})
   }
 
   const handleChangeShowPassword = () => {
@@ -46,17 +47,21 @@ const AuthPage = observer(() => {
     event.preventDefault();
   };
 
-  const login = async () =>{
+  const login = async () => {
+
     const isAuthenticated = await authStore.login(form.username, form.password)
-    if(isAuthenticated){
-      navigate(fromPage, { replace: true })
-    }else {
+
+    if (isAuthenticated) {
+
+      console.log("")
+      navigate(fromPage, {replace: true})
+    } else {
       setErrorForm('Неверный логин или пароль.')
     }
   }
 
   const handleKeyPress = (e, v) => {
-    if (e.code==="Enter"){
+    if (e.code === "Enter") {
       login()
     }
   }
@@ -72,9 +77,9 @@ const AuthPage = observer(() => {
       }}
     >
       <Container maxWidth="xs">
-        <Box sx={{ my: 8, backgroundColor: 'white', p: 5, boxShadow: 2, borderRadius: 1 }}>
+        <Box sx={{my: 8, backgroundColor: 'white', p: 5, boxShadow: 2, borderRadius: 1}}>
           {/*<Typography variant="h3" sx={{textAlign: 'center'}}>Вход на сайт</Typography>*/}
-          <Box sx={{ pb: 1, pt: 2, textAlign: 'center' }}><img className="auth-logo" src={""} alt="logo" /></Box>
+          <Box sx={{pb: 1, pt: 2, textAlign: 'center'}}><img className="auth-logo" src={""} alt="logo" /></Box>
           <TextField
             fullWidth
             id="username"
@@ -101,7 +106,7 @@ const AuthPage = observer(() => {
             error={Boolean(errorForm)}
             helperText={errorForm}
             size={'small'}
-            onKeyPress={handleKeyPress} 
+            onKeyPress={handleKeyPress}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
@@ -115,7 +120,7 @@ const AuthPage = observer(() => {
               ),
             }}
           />
-          <Box sx={{ py: 2 }}>
+          <Box sx={{py: 2}}>
             <Button
               color="primary"
               fullWidth

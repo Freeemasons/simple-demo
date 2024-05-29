@@ -37,14 +37,12 @@ export const COUNTER_ROUTE = '/counter'
 export const TODOS_ROUTE = '/todos'
 
 
-// export const indexElement = <RequireAuth><SchedulePage/></RequireAuth>
+export const indexElement = <CounterPage />
 
-// export const privateRoutes = [
-//   { path: ADMIN_ROUTE, Component: <RequireAuth><ControlPanelPage/></RequireAuth> },
-// ]
+export const privateRoutes = [
+  { path: TODOS_ROUTE, Component: <TodosPage /> },
+]
 
 export const publicRoutes = [
-  // { path: AUTH_ROUTE, Component: <AuthPage/> },
-  { path: COUNTER_ROUTE, Component: <CounterPage /> },
-  { path: TODOS_ROUTE, Component: <TodosPage /> },
+  { path: AUTH_ROUTE, Component: <AuthPage/> },
 ]

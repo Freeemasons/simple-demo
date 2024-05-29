@@ -3,6 +3,7 @@ import {makeAutoObservable} from "mobx";
 
 
 class AuthStore {
+
    user = JSON.parse(localStorage.getItem('user')) || {
      id: null,
      email: null,
@@ -13,7 +14,11 @@ class AuthStore {
      isSpecialist: null,
      isManagementGroup: null,
      isOwnerAdmin: null,
+
+     login: "admin",
+     password: "qwerty"
    }
+
   isAuth = false
   isLoading = false
   menuAnchorEl = null
@@ -40,11 +45,24 @@ class AuthStore {
   }
 
   setUser(user) {
+
     localStorage.setItem('user', JSON.stringify(user))
     this.user = user
   }
 
   async login(username, password) {
+
+     if (username === this.user.login && password === this.user.password) {
+
+       this.setIsAuth(true)
+       this.setIsNavigateHome(false)
+
+       // this.setUser({user: username, password: password})
+       localStorage.setItem('auth', JSON.stringify(true))
+
+       return true
+
+     }
 
 
     // if (data) {
@@ -54,12 +72,14 @@ class AuthStore {
     //   this.setIsAuth(true)
     //   return true
     // }
+
     return false
   }
 
   async logout() {
 
     this.setIsAuth(false)
+    localStorage.setItem('auth', JSON.stringify(false))
   }
 
   setIsNavigateHome(is_navigate){
@@ -68,6 +88,7 @@ class AuthStore {
   }
 
   checkAuth(){
+
      if (this.user.id){
        this.setIsAuth(true)
      }
