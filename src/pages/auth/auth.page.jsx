@@ -54,14 +54,14 @@ const AuthPage = observer(() => {
 
     if (isAuthenticated) {
 
-      console.log("")
       navigate(fromPage, {replace: true})
     } else {
-      setErrorForm('Неверный логин или пароль.')
+      setErrorForm('Error login or password')
     }
   }
 
   const handleKeyPress = (e, v) => {
+
     if (e.code === "Enter") {
       login()
     }
