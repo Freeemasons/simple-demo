@@ -33,7 +33,6 @@ const TodosPage = lazy(() => lazyRetry( () => import("../../pages/Todos/Todos.pa
 
 export const HOME_ROUTE = '/'
 export const AUTH_ROUTE = '/auth'
-export const COUNTER_ROUTE = '/counter'
 export const TODOS_ROUTE = '/todos'
 
 

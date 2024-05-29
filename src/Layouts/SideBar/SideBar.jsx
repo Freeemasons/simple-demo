@@ -73,7 +73,7 @@ export const SideBar = observer((props) => {
       <List>
         <ListItem button
                   // onClick={handleScheduleClick}
-                  selected={nav.selectedIndex === 0} component={RouterLink} to="/counter">
+                  selected={nav.selectedIndex === 0} component={RouterLink} to="/">
           <ListItemIcon><EventIcon /></ListItemIcon>
           <ListItemText primary='Счетчик' />
         </ListItem>
