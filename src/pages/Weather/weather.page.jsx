@@ -35,7 +35,6 @@ const WeatherPage = (observer(() => {
       fetch(`https://api.openweathermap.org/data/2.5/weather?q=${weatherStore.currentCity}&appid=${key}`)
         .then(response => {
 
-          console.log("response", response)
           if (response.ok) {
             return response.json();
           } else {
