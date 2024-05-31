@@ -45,7 +45,7 @@ export const indexElement = <CounterPage />
 
 export const privateRoutes = [
   { path: WEATHER_ROUTE, Component: <RequireAuth><WeatherPage /></RequireAuth> },
-  { path: PRODUCTS_ROUTE, Component: <RequireAuth><ProductsPage /></RequireAuth> },
+  // { path: PRODUCTS_ROUTE, Component: <RequireAuth><ProductsPage /></RequireAuth> },
 ]
 
 export const publicRoutes = [

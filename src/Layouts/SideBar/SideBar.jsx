@@ -71,12 +71,7 @@ export const SideBar = observer((props) => {
       </Toolbar>
       <Divider />
       <List>
-        <ListItem button
-                  // onClick={handleScheduleClick}
-                  selected={nav.selectedIndex === 0} component={RouterLink} to="/">
-          <ListItemIcon><EventIcon /></ListItemIcon>
-          <ListItemText primary='Counter' />
-        </ListItem>
+
         <ListItem button onClick={handleListItemClick}
                   selected={nav.selectedIndex === 1} component={RouterLink} to="/weather">
           <ListItemIcon><GroupIcon /></ListItemIcon>
@@ -86,6 +81,11 @@ export const SideBar = observer((props) => {
                   selected={nav.selectedIndex === 2} component={RouterLink} to="/products">
           <ListItemIcon><GroupIcon /></ListItemIcon>
           <ListItemText primary='Products' />
+        </ListItem>
+        <ListItem button
+                  selected={nav.selectedIndex === 0} component={RouterLink} to="/">
+          <ListItemIcon><EventIcon /></ListItemIcon>
+          <ListItemText primary='Counter' />
         </ListItem>
       </List>
 

@@ -14,7 +14,6 @@ const Counter = provider(
   const counterStore = useInstance(CounterStore)
   const nav = useInstance(NavStore)
 
-  // console.log("NavStore", toJS(NavStore))
 
   useEffect(() => {
     document.title = 'счетчик'

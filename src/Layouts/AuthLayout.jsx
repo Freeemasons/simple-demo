@@ -11,6 +11,7 @@ import { styled } from "@mui/material/styles";
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import CounterStore from "../stores/store-counter"
 import WeatherStore from "../stores/weather.store"
+import ProductStore from "../stores/product.store"
 
 
 const ItemText = styled(Paper)(({theme}) => ({
@@ -22,7 +23,7 @@ const ItemText = styled(Paper)(({theme}) => ({
 
 
 export const AuthLayout = provider(
-  CounterStore, NavStore, WeatherStore
+  CounterStore, NavStore, WeatherStore, ProductStore,
 )(observer(() => {
 
   const nav = useInstance(NavStore)

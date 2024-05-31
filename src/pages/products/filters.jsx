@@ -1,19 +1,27 @@
 import React from 'react';
-import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from "@mui/material"
+import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Checkbox, Grid, Typography } from "@mui/material"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
-import ThermostatIcon from "@mui/icons-material/Thermostat"
-import TelegramIcon from "@mui/icons-material/Telegram"
-import WaterDropIcon from "@mui/icons-material/WaterDrop"
-import ThunderstormIcon from "@mui/icons-material/Thunderstorm"
-import SpeedIcon from "@mui/icons-material/Speed"
 import { observer } from "mobx-react-lite"
+import RefreshIcon from "@mui/icons-material/Refresh"
+import { toJS } from "mobx"
+import { useInstance } from "react-ioc"
+import ProductStore from "../../stores/product.store"
 
 const Filters = (observer((props) => {
+
+  const productStore = useInstance(ProductStore)
+  console.log("productStore?.data", toJS(productStore?.data))
+
+
+  const {
+    categories, selectedCategories, handleCheckboxChange,
+    fetchProducts, setSelectedCategories, setSearchText, setItemsToShow
+  } = props
 
 
   return (
 
-    <>
+    <Grid item xs={12} md={3}>
       <Accordion
         disableGutters
         // elevation={0}
@@ -27,62 +35,45 @@ const Filters = (observer((props) => {
             Filters
           </Typography>
 
-
         </AccordionSummary>
         <AccordionDetails>
 
           <Box sx={{
             display: "flex",
-            gap: 2,
-            mb: "10px"
+            alignItems: "center"
           }}>
-            <ThermostatIcon />
-            <Typography variant={"subtitle1"}>Feels</Typography>
-            <Typography> &#176;C</Typography>
+            <Typography>
+              Category
+            </Typography>
+
+            <Button
+              onClick={() => {
+                // dataSet(null)
+                productStore.setProductData([])
+                fetchProducts()
+                setSelectedCategories([])
+                setSearchText("")
+                setItemsToShow(8)
+              }}
+            >
+              <RefreshIcon /> Clear search
+            </Button>
           </Box>
 
-          <Box sx={{
-            display: "flex",
-            gap: 2,
-            mb: "10px"
-          }}>
-            <TelegramIcon />
-            <Typography variant={"subtitle1"}>Wind</Typography>
-            <Typography> m/s</Typography>
-          </Box>
 
-          <Box sx={{
-            display: "flex",
-            gap: 2,
-            mb: "10px"
-          }}>
-            <WaterDropIcon />
-            <Typography variant={"subtitle1"}>Hum</Typography>
-            <Typography> %</Typography>
-          </Box>
+          {categories && categories.map((category) => (
+            <div key={category}>
+              <Checkbox
+                checked={selectedCategories.includes(category)}
+                onChange={() => handleCheckboxChange(category)}
+              />
+              {category}
+            </div>
+          ))}
 
-          <Box sx={{
-            display: "flex",
-            gap: 2,
-            mb: "10px"
-          }}>
-            <ThunderstormIcon />
-            <Typography variant={"subtitle1"}>Rain</Typography>
-            <Typography></Typography>
-          </Box>
-
-          <Box sx={{
-            display: "flex",
-            gap: 2
-          }}>
-
-            <SpeedIcon />
-            <Typography variant={"subtitle1"}>Pressure</Typography>
-            <Typography></Typography>
-          </Box>
         </AccordionDetails>
       </Accordion>
-    </>
+    </Grid>
   )
 
 }));

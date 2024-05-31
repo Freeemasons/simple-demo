@@ -1,8 +1,9 @@
 import React from 'react';
 import { Grid, TextField } from "@mui/material"
 
-const SearchField = () => {
+const SearchField = (props) => {
 
+  const {handleSearch, handleKeyPress, searchText} = props
 
   return (
     <Grid container>
@@ -17,10 +18,11 @@ const SearchField = () => {
           name="search"
           type="text"
           variant="outlined"
-          // onChange={changeHandler}
-          // onBlur={changeHandler}
+          onChange={handleSearch}
+          // onBlur={handleSearch}
           size={'small'}
           focused
+          value={searchText}
         />
 
       </Grid>
