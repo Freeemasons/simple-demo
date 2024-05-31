@@ -82,6 +82,11 @@ export const SideBar = observer((props) => {
           <ListItemIcon><GroupIcon /></ListItemIcon>
           <ListItemText primary='Weather' />
         </ListItem>
+        <ListItem button onClick={handleListItemClick}
+                  selected={nav.selectedIndex === 2} component={RouterLink} to="/products">
+          <ListItemIcon><GroupIcon /></ListItemIcon>
+          <ListItemText primary='Products' />
+        </ListItem>
       </List>
 
     </div>

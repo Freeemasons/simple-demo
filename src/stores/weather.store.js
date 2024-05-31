@@ -7,7 +7,7 @@ class WeatherStore{
 
   state = {
 
-    currentCity: "Moscow",
+    currentCity: "Saint Petersburg",
     errorForm: "",
     currentTime: "",
     dataWeather: undefined,

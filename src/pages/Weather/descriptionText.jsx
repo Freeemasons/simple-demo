@@ -11,26 +11,14 @@ const DescriptionText = (observer(() => {
         p: "20px",
         mb: "20px"
       }}>
-        <Typography variant={"h3"}>Lorem ipsum</Typography>
+        <Typography variant={"h3"}>Weather widget</Typography>
         <Typography sx={{mb: "20px"}}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae laoreet sapien. Duis aliquam mollis
-          accumsan. Quisque vitae faucibus dui. In lectus eros, posuere a ultricies non, maximus in mi. Ut vel dui
-          ac turpis ultricies commodo vitae ornare nibh. Praesent a suscipit ligula. Etiam ac purus eros. Integer ut
-          vulputate enim. Nam eleifend dignissim laoreet. Mauris malesuada sit amet enim quis tempus.
+          The weather widget is connected to the api and shows the weather depending on the city, which is specified via
+          a text field. The widget displays current data and location time. Additional information: how temperature
+          feels like,
+          wind speed, humidity, precipitation and pressure feel.
         </Typography>
-        <Typography>
-          Pellentesque elit nunc, dignissim in ullamcorper id, egestas lobortis leo. Cras quis nunc ac elit tempus
-          gravida eu et urna. Cras tempus tortor urna, vitae tincidunt nulla vulputate interdum. Aenean varius
-          consectetur mauris, vel convallis nunc molestie a. Aliquam malesuada tortor et interdum ornare. Nam
-          gravida congue neque convallis commodo. Etiam viverra at tortor rhoncus tincidunt. Praesent ipsum purus,
-          ornare vel hendrerit et, tempor ut arcu. Sed sed nibh vitae dolor iaculis volutpat id a leo. Morbi cursus
-          commodo congue. Nunc turpis erat, dignissim vel suscipit a, interdum vel mauris. Aenean finibus posuere
-          ultrices. Pellentesque posuere, neque id convallis sagittis, dui nisi lacinia sem, sed ultricies risus
-          augue et lectus. Suspendisse non magna nec augue tempus viverra. Aenean dictum pulvinar neque sit amet
-          porta.
-
-        </Typography>
-
+        
       </Paper>
 
       <Paper sx={{

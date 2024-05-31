@@ -46,8 +46,9 @@ const WeatherPage = (observer(() => {
           resolve(data);
         })
         .catch(error => {
+
           alert(`Ошибка! ${error}`)
-          reject(error);
+          // reject(error);
         });
     });
   }, [key]);
@@ -56,7 +57,7 @@ const WeatherPage = (observer(() => {
   useEffect(() => {
 
     fetchWeather()
-  }, [fetchWeather])
+  }, [])
 
   // useEffect(() => {
   //
