@@ -10,6 +10,7 @@ import Filters from "./filters"
 import ProductStore from "../../stores/product.store"
 
 
+
 const categories = ["men's clothing", "jewelery", "electronics", "women's clothing"];
 
 

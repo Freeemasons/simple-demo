@@ -13,6 +13,8 @@ const Gallery = ({ data, startIndex }) => {
         thumbnailPosition={'left'}
         showIndex={true}
         startIndex={startIndex}
+        showFullscreenButton={false}
+        showPlayButton={false}
       />
     </>
   );

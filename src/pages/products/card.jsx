@@ -59,7 +59,6 @@ const CardItem = (props) => {
                 <Rating name="read-only" value={rating.rate} readOnly />
               </Box>
 
-
             </CardContent>
           </CardActionArea>
         </Card>

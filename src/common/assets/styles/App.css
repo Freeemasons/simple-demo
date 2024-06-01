@@ -140,3 +140,12 @@ html *::-webkit-scrollbar-thumb:hover {
     max-width: 100%;
     height: auto;
 }
+
+.slide-active {
+    transform: scale(1);
+}
+
+.slide-inactive {
+    transform: scale(0);
+    display: none;
+}
