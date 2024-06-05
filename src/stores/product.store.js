@@ -15,7 +15,6 @@ class ProductStore{
   setProductData(data){
 
     this.state.data = data
-    console.log("DATA", toJS(this.state.data))
   }
 
   get data(){

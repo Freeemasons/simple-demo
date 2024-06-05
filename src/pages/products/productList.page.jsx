@@ -62,6 +62,7 @@ const ProductListPage = (observer(() => {
   }, [])
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
 
   }, [selectedCategories])
 
@@ -119,7 +120,6 @@ const ProductListPage = (observer(() => {
           setSearchText={setSearchText}
           setItemsToShow={setItemsToShow}
         />
-
 
         <CardlList
           itemsToShow={itemsToShow}

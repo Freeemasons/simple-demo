@@ -3,15 +3,12 @@ import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Checkbox, G
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
 import { observer } from "mobx-react-lite"
 import RefreshIcon from "@mui/icons-material/Refresh"
-import { toJS } from "mobx"
 import { useInstance } from "react-ioc"
 import ProductStore from "../../stores/product.store"
 
 const Filters = (observer((props) => {
 
   const productStore = useInstance(ProductStore)
-  console.log("productStore?.data", toJS(productStore?.data))
-
 
   const {
     categories, selectedCategories, handleCheckboxChange,

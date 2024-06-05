@@ -1,6 +1,5 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { Box, Grid, Paper, Toolbar } from "@mui/material";
 import { Header } from "./Header/Header";
 import { SideBar } from "./SideBar/SideBar";
@@ -12,6 +11,12 @@ import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import CounterStore from "../stores/store-counter"
 import WeatherStore from "../stores/weather.store"
 import ProductStore from "../stores/product.store"
+import TableViewStore from "../pages/table/stores/table.view-store"
+import StoreTableModal from "../pages/table/stores/storeTableModal"
+
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import TodoStore from "../stores/todo.store"
+
 
 
 const ItemText = styled(Paper)(({theme}) => ({
@@ -23,7 +28,7 @@ const ItemText = styled(Paper)(({theme}) => ({
 
 
 export const AuthLayout = provider(
-  CounterStore, NavStore, WeatherStore, ProductStore,
+  CounterStore, NavStore, WeatherStore, ProductStore,TableViewStore,StoreTableModal,TodoStore
 )(observer(() => {
 
   const nav = useInstance(NavStore)

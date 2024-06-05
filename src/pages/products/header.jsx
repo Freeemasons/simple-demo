@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Box, Button, Grid, Typography } from "@mui/material"
+import React from 'react';
+import { Box, Grid, Typography } from "@mui/material"
 import doctor from "../../common/assets/img/products/doctor.jpg"
 
 
@@ -12,16 +12,10 @@ const Header = () => {
       <Grid item xs={12}>
         <Grid container>
           <Grid item xs={12} md={4}>
-            <Box
-
-            >
-
+            <Box>
               <img src={doctor} alt="" style={{ maxWidth: '100%', height: "auto" }}/>
-
             </Box>
-
           </Grid>
-
           <Grid item xs={12} md={8}>
 
             <Box sx={{
@@ -35,15 +29,9 @@ const Header = () => {
               <Typography variant={"h4"}>
                 Buy now!
               </Typography>
-
             </Box>
-
-
           </Grid>
-
         </Grid>
-
-
       </Grid>
     </Grid>
   );

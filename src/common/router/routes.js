@@ -31,11 +31,13 @@ const lazyRetry = (componentImport) =>
 const CounterPage = lazy(() => lazyRetry( () => import("../../pages/counter/counter.page.jsx")))
 const WeatherPage = lazy(() => lazyRetry( () => import("../../pages/Weather/weather.page.jsx")))
 const ProductsPage = lazy(() => lazyRetry( () => import("../../pages/products/productList.page")))
+const TablePage = lazy(() => lazyRetry( () => import("../../pages/table/table.page")))
 
 export const HOME_ROUTE = '/'
 export const AUTH_ROUTE = '/auth'
 export const WEATHER_ROUTE = '/weather'
 export const PRODUCTS_ROUTE = '/products'
+export const TABLE_ROUTE = '/table'
 
 // export const USER_PROFILE = '/user-profile'
 // export const EDIT_USER_PROFILE = '/edit-user-profile'
@@ -45,6 +47,7 @@ export const indexElement = <CounterPage />
 
 export const privateRoutes = [
   { path: WEATHER_ROUTE, Component: <RequireAuth><WeatherPage /></RequireAuth> },
+  { path: TABLE_ROUTE, Component: <RequireAuth><TablePage /></RequireAuth> },
   // { path: PRODUCTS_ROUTE, Component: <RequireAuth><ProductsPage /></RequireAuth> },
 ]
 

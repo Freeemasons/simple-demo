@@ -64,15 +64,6 @@ class AuthStore {
 
      }
 
-
-    // if (data) {
-    //   this.setUser(data.user)
-    //   this.setMedicalCentersData(data.centers)
-    //   this.setIsNavigateHome(false)
-    //   this.setIsAuth(true)
-    //   return true
-    // }
-
     return false
   }
 

@@ -1,10 +1,10 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Switch, Link as RouterLink, BrowserRouter, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route,  Routes } from 'react-router-dom';
 import React, {Suspense, lazy} from 'react';
 import { FullPageFallbackProgress } from "./Components/UI/preloaders/FullPageFallbackProgress"
 import "../src/common/assets/styles/App.css";
 import { observer } from "mobx-react-lite"
-import { provider, useInstance } from "react-ioc"
+import { provider } from "react-ioc"
 import { AuthLayout } from "./Layouts/AuthLayout"
 import CounterPage from "./pages/counter/counter.page"
 import { HOME_ROUTE, privateRoutes, publicRoutes } from "./common/router/routes"
@@ -52,12 +52,8 @@ const App  = provider(
             {privateRoutes.map(({path, Component}) =>
               <Route key={path} path={path} element={Component}/>
             )}
-
             <Route path={"products"} element={<RequireAuth><ProductsPage /></RequireAuth>} />
-
             <Route path={"products/:id"} element={<RequireAuth><ProductItemPage /></RequireAuth>}/>
-
-
           </Route>
 
           {publicRoutes.map(({path, Component}) =>
